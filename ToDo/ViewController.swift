@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-//these arrays are used to hold the retrieved information
+//these arrays are used to hold the retrieved information that will populate the table
 var titles:[String] = []
 var subtitles:[String] = []
 var coordinates:[String] = []
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
        
-        
+        saveThis(title: "Change batteries of Garmin", subtitle: "GSC-10 and HRM", coordinates: "35.530395$139.693453")
         
     }
 
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         
 
     }
+   
     
     //function to retrieve data
     func getThis()
@@ -68,33 +69,34 @@ class ViewController: UIViewController {
         
         do
         {
-           let results = try context.fetch(request)
+            let results = try context.fetch(request)
             
+            //IF mechanism below checks to see if there is data in the arrays.
+            //if there is data, we reset them to zero to avoid display errors (e.g. duplicates, entries are shown 3 times, etc..)
             if results.count > 0
             {
+                //clean the arrays first
                 titles.removeAll()
                 subtitles.removeAll()
                 coordinates.removeAll()
                 
-                for result in results as! [NSManagedObjectContext]
+                //loop through the results and store them in the newly cleaned arrays
+                for result in results as! [NSManagedObject]
                 {
-                  //Get Title
-                    if let myTitle = result.value(forKey: "title") as? String
-                    {
-                            titles.append(myTitle)
-                    }
-                    else
-                    {
-                        
-                    }
+                    //get title
+                    if let myTitle
                 }
+            }
         }
-        catch <#pattern#>
+        catch
         {
-        
-            <#statements#>
+           print("Error retrieving data")
         }
         
+        
+
+        
+ 
 
     }
 
