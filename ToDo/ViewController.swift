@@ -84,7 +84,28 @@ class ViewController: UIViewController {
                 for result in results as! [NSManagedObject]
                 {
                     //get title
-                    if let myTitle
+                    if let myTitle = result.value(forKey: "title") as? String //if the result key "title" can be converted into String 
+                    {
+                        titles.append(myTitle)
+                    }
+                    else
+                    {
+                        titles.append(" ")
+                    }
+                    
+                    
+                    //get subtitle
+                    if let mySubtitle = result.value(forKey: "subtitle") as? String //if the result key "subtitle" can be converted into String
+                    {
+                        subtitles.append(mySubtitle)
+                    }
+                    else
+                    {
+                        subtitles.append(" ")
+                    }
+
+                    
+
                 }
             }
         }
