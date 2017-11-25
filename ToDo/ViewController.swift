@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
        
-        saveThis(title: "Change batteries of Garmin", subtitle: "GSC-10 and HRM", coordinates: "35.530395$139.693453")
+        //saveThis(title: "Change batteries of Garmin", subtitle: "GSC-10 and HRM", coordinates: "35.530395$139.693453")
+        getThis()
+        print(titles)
         
     }
 
@@ -103,6 +105,18 @@ class ViewController: UIViewController {
                     {
                         subtitles.append(" ")
                     }
+                    
+                    
+                    //get coordinates
+                    if let myCoordinates = result.value(forKey: "coordinates") as? String //if the result key "coordinates" can be converted into String
+                    {
+                        coordinates.append(myCoordinates)
+                    }
+                    else
+                    {
+                        coordinates.append(" ")
+                    }
+
 
                     
 
