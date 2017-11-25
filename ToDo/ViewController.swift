@@ -23,10 +23,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
        
-        //saveThis(title: "Change batteries of Garmin", subtitle: "GSC-10 and HRM", coordinates: "35.530395$139.693453")
-        getThis()
-        print(titles)
-        
+                
     }
 
     override func didReceiveMemoryWarning() {
