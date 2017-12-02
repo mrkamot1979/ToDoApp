@@ -15,14 +15,26 @@ var subtitles:[String] = []
 var coordinates:[String] = []
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
+    //standard way of creating the tables; this line specifies the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return titles.count
+    }
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       
+       //getThis()
+        //print(subtitles)
+        
                 
     }
 
