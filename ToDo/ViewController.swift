@@ -26,6 +26,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return titles.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: <#T##IndexPath#>)
+        cell.textLabel?.text
+    }
+    
+    
 
     override func viewDidLoad()
     {
