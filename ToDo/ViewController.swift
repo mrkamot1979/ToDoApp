@@ -26,11 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return titles.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: <#T##IndexPath#>)
-        cell.textLabel?.text
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = titles[indexPath.row]
+        cell.detailTextLabel?.text = subtitles[indexPath.row]
+        return cell
     }
-    
     
 
     override func viewDidLoad()
@@ -40,6 +42,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
        //getThis()
         //print(subtitles)
+        
+        getThis()
         
                 
     }
@@ -137,7 +141,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
                 }
             }
+            myTableView.reloadData()
+    
         }
+            
+            
+            
         catch
         {
            print("Error retrieving data")
