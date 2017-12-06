@@ -44,6 +44,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             thisItem = indexPath.row //item that we want to delete
+            deleteThis()
+            getThis()
+            
         }
     }
 
@@ -189,10 +192,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //if there is data, we reset them to zero to avoid display errors (e.g. duplicates, entries are shown 3 times, etc..)
             if results.count > 0
             {
-                //clean the arrays first
-                titles.removeAll()
-                subtitles.removeAll()
-                coordinates.removeAll()
                 
                 //loop through the results and store them in the newly cleaned arrays
                 for result in results as! [NSManagedObject]
@@ -202,19 +201,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         if myTitle == titles[thisItem]
                         {
                             context.delete(result)
+                            do
+                            {
+                                try context.save()
+                            }
+                            catch
+                            {
+                                
+                            }
                         }
-                        do
-                        {
-                            try context.save
-                        }
-                        catch
-                        {
-                            
-                        }
+                        
                     }
                 }
             }
-            myTableView.reloadData()
         }
         catch
         {
