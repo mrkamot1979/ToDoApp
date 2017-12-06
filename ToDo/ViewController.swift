@@ -14,6 +14,8 @@ var titles:[String] = []
 var subtitles:[String] = []
 var coordinates:[String] = []
 
+var thisItem:Int = 0 //this variable is used to hold the item that is going to be deleted
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -34,6 +36,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    
+    //this function listens for any editing action in the cell of the tableview e.g. if there are any insertion or deletion in the cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        //if mechanism to find out if the user did a "delete"
+        if editingStyle == UITableViewCellEditingStyle.delete
+        {
+            thisItem = indexPath.row //item that we want to delete
+        }
+    }
 
     override func viewDidLoad()
     {
@@ -185,7 +197,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //loop through the results and store them in the newly cleaned arrays
                 for result in results as! [NSManagedObject]
                 {
-                    //deleting object
+                    if let myTitle = result.value(forKey: "Title") as? String
+                    {
+                        if myTitle == titles[thisItem]
+                        {
+                            context.delete(result)
+                        }
+                        do
+                        {
+                            try context.save
+                        }
+                        catch
+                        {
+                            
+                        }
+                    }
                 }
             }
             myTableView.reloadData()
