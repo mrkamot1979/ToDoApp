@@ -159,5 +159,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
 
+
+    //function to delete item
+    func deleteThis()
+    {
+        //these lines are essentially the same as getThis() but it will be used to delete items.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ToDo")
+
+        do
+        {
+            let results = try context.fetch(request)
+            
+            //IF mechanism below checks to see if there is data in the arrays.
+            //if there is data, we reset them to zero to avoid display errors (e.g. duplicates, entries are shown 3 times, etc..)
+            if results.count > 0
+            {
+                //clean the arrays first
+                titles.removeAll()
+                subtitles.removeAll()
+                coordinates.removeAll()
+                
+                //loop through the results and store them in the newly cleaned arrays
+                for result in results as! [NSManagedObject]
+                {
+                    //deleting object
+                }
+            }
+            myTableView.reloadData()
+        }
+        catch
+        {
+            print("Error retrieving data")
+        }
+    }
 }
+
 
