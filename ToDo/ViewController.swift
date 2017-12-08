@@ -150,28 +150,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     {
                         coordinates.append(" ")
                     }
-
-
-                    
-
                 }
             }
             myTableView.reloadData()
-    
         }
-            
-            
-            
-        catch
+         catch
         {
            print("Error retrieving data")
         }
-        
-        
-
-        
- 
-
     }
 
 
