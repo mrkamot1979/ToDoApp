@@ -44,8 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             thisItem = indexPath.row //item that we want to delete
-            deleteThis()
-            getThis()
+            deleteThis() //delets the item
+            getThis() //reloads the table without the deleted item
             
         }
     }
