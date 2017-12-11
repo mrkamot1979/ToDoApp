@@ -109,14 +109,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             let results = try context.fetch(request)
             
-            //IF mechanism below checks to see if there is data in the arrays.
-            //if there is data, we reset them to zero to avoid display errors (e.g. duplicates, entries are shown 3 times, etc..)
+            //clean the arrays first
+            titles.removeAll()
+            subtitles.removeAll()
+            coordinates.removeAll()
+
+            
             if results.count > 0
             {
-                //clean the arrays first
-                titles.removeAll()
-                subtitles.removeAll()
-                coordinates.removeAll()
                 
                 //loop through the results and store them in the newly cleaned arrays
                 for result in results as! [NSManagedObject]
