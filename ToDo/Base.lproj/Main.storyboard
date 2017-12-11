@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +22,55 @@
                     <view key="view" contentMode="scaleToFill" id="UYT-kt-aOy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oer-pa-LaX">
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="45C-xj-8Y0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subtitle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tos-wA-NTp">
+                                <rect key="frame" x="16" y="140" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fuu-jx-5aU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Key-el-PMX">
+                                <rect key="frame" x="16" y="199" width="343" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Key-el-PMX" secondAttribute="height" multiplier="343:391" id="Yn3-Md-Zpm"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-zf-gym">
+                                <rect key="frame" x="112" y="536" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tos-wA-NTp" firstAttribute="leading" secondItem="UYT-kt-aOy" secondAttribute="leadingMargin" id="3AS-R9-Psh"/>
+                            <constraint firstItem="Key-el-PMX" firstAttribute="trailing" secondItem="UYT-kt-aOy" secondAttribute="trailingMargin" id="41L-Go-eQd"/>
+                            <constraint firstItem="oer-pa-LaX" firstAttribute="leading" secondItem="UYT-kt-aOy" secondAttribute="leadingMargin" id="X6h-4z-BJe"/>
+                            <constraint firstItem="tos-wA-NTp" firstAttribute="trailing" secondItem="UYT-kt-aOy" secondAttribute="trailingMargin" id="aOm-9h-K0E"/>
+                            <constraint firstItem="Key-el-PMX" firstAttribute="top" secondItem="tos-wA-NTp" secondAttribute="bottom" constant="29" id="hWc-Kb-vMQ"/>
+                            <constraint firstItem="tos-wA-NTp" firstAttribute="top" secondItem="oer-pa-LaX" secondAttribute="bottom" constant="30" id="ipA-Re-6Pw"/>
+                            <constraint firstItem="Key-el-PMX" firstAttribute="leading" secondItem="UYT-kt-aOy" secondAttribute="leadingMargin" id="qdX-KT-ZU2"/>
+                            <constraint firstItem="oer-pa-LaX" firstAttribute="trailing" secondItem="UYT-kt-aOy" secondAttribute="trailingMargin" id="xVa-D4-lpr"/>
+                            <constraint firstItem="oer-pa-LaX" firstAttribute="top" secondItem="m08-WI-sM2" secondAttribute="bottom" constant="60" id="yyy-SY-yTE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="F9l-vX-LxS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPE-oZ-Xxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="-12"/>
+            <point key="canvasLocation" x="197.59999999999999" y="-12.143928035982009"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8qG-HI-Yce">
