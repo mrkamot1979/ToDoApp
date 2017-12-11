@@ -162,6 +162,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     //function to delete item
+    //in general the deleteThis function receives the context from the commit editingStyle Delete table function.
+    //once deleteThis() receives the context, it then cycles through the stored data to see if there is a match.
+    //once the match is found, it is promptly deleted and the changes are immediately saved.
     func deleteThis()
     {
         //these lines are essentially the same as getThis() but it will be used to delete items.
@@ -185,10 +188,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     {
                         if myTitle == titles[thisItem]
                         {
-                            context.delete(result)
+                            context.delete(result) //delete the data
                             do
                             {
-                                try context.save()
+                                try context.save() //immediately saves the data
                             }
                             catch
                             {
