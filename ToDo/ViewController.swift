@@ -55,10 +55,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       //getThis()
+       getThis()
         //print(subtitles)
         
-        getThis()
+        //saveThis(title: "Exercise", subtitle: "Pullups 8x", coordinates: "222")
+        //saveThis(title: "WFlows", subtitle: "Delivery", coordinates: "76543!")
+    
         
                 
     }
@@ -177,16 +179,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             let results = try context.fetch(request)
             
-            //IF mechanism below checks to see if there is data in the arrays.
             if results.count > 0
             {
                 
-                //loop through the results and store them in the newly cleaned arrays
+                //FOR is used to loop through the stored data.
                 for result in results as! [NSManagedObject]
                 {
                     if let myTitle = result.value(forKey: "Title") as? String
                     {
-                        if myTitle == titles[thisItem]
+                        if myTitle == titles[thisItem] //if myTitle is matched with thisItem
                         {
                             context.delete(result) //delete the data
                             do
@@ -195,7 +196,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             }
                             catch
                             {
-                                
+                                print("There was an error in the re-saving")
                             }
                         }
                         
@@ -205,7 +206,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         catch
         {
-            print("Error retrieving data")
+            print("Error deleting data")
         }
     }
 }
