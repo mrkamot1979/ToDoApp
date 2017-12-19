@@ -71,32 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
 
-    //function to save data
-    func saveThis(title:String, subtitle:String, coordinates:String)
-    {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        
-        let newItem = NSEntityDescription.insertNewObject(forEntityName: "ToDo", into: context)
-        
-        newItem.setValue(title, forKey: "title")
-        newItem.setValue(subtitle, forKey: "subtitle")
-        newItem.setValue(coordinates, forKey: "coordinates")
-        
-        do
-        {
-            try context.save()
-            print("Saved")
-        }
-        catch
-        {
-            print("Error detected")
-        }
-        
-
-    }
-   
+      
     
     //function to retrieve data
     func getThis()
