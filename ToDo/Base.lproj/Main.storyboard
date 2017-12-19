@@ -49,6 +49,9 @@
                                 <state key="normal" title="ADD ITEM">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addItem:" destination="Uuf-Xh-ntB" eventType="touchUpInside" id="cdm-zw-g25"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,6 +63,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="F9l-vX-LxS"/>
                     <connections>
+                        <outlet property="myMapview" destination="Key-el-PMX" id="Oz4-23-Rqe"/>
                         <outlet property="txtSubtitle" destination="tos-wA-NTp" id="P9d-nA-ciO"/>
                         <outlet property="txtTitle" destination="oer-pa-LaX" id="RsV-bl-9yt"/>
                     </connections>

@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import MapKit //to use the map
+import CoreLocation //to find out current location
+
+
 
 class AddItemViewController: UIViewController {
     
     
     
     @IBOutlet weak var txtTitle: UITextField!
-    
-    
     @IBOutlet weak var txtSubtitle: UITextField!
+    @IBOutlet weak var myMapview: MKMapView!
 
+    //manager variable - keeps track of where are user is
+    let manager = CLLocationManager()
+    
+    @IBAction func addItem(_ sender: Any)
+    {
+    
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //immediately we start the manager once the app loads
+        manager.delegate = self
+        manager.desiredAccuracy
     }
 
     override func didReceiveMemoryWarning() {
