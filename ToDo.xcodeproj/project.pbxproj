@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003AC6931FE92CA60056E998 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AC6921FE92CA60056E998 /* AddItemViewController.swift */; };
 		006F17191FC43BA3001CC173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F17181FC43BA3001CC173 /* AppDelegate.swift */; };
 		006F171B1FC43BA3001CC173 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F171A1FC43BA3001CC173 /* ViewController.swift */; };
 		006F171E1FC43BA3001CC173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006F171C1FC43BA3001CC173 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003AC6921FE92CA60056E998 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		006F17151FC43BA2001CC173 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006F17181FC43BA3001CC173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006F171A1FC43BA3001CC173 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		006F170C1FC43BA2001CC173 = {
 			isa = PBXGroup;
 			children = (
+				003AC6921FE92CA60056E998 /* AddItemViewController.swift */,
 				006F17171FC43BA3001CC173 /* ToDo */,
 				006F17161FC43BA2001CC173 /* Products */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				006F171B1FC43BA3001CC173 /* ViewController.swift in Sources */,
+				003AC6931FE92CA60056E998 /* AddItemViewController.swift in Sources */,
 				006F17211FC43BA3001CC173 /* ToDo.xcdatamodeld in Sources */,
 				006F17191FC43BA3001CC173 /* AppDelegate.swift in Sources */,
 			);
@@ -306,6 +310,7 @@
 				006F172C1FC43BA3001CC173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
