@@ -12,7 +12,7 @@ import CoreLocation //to find out current location
 
 
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
@@ -20,23 +20,46 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var txtSubtitle: UITextField!
     @IBOutlet weak var myMapview: MKMapView!
 
+    let location = CLLocation()
+    
     //manager variable - keeps track of where are user is
     let manager = CLLocationManager()
     
+    
+    
     @IBAction func addItem(_ sender: Any)
     {
-    
+        if txtTitle.text != "" && txtSubtitle.text != ""
+        {
+            
+        }
     }
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         //immediately we start the manager once the app loads
         manager.delegate = self
-        manager.desiredAccuracy
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+    }
+    
+    //this function works the same as a timer; essentially this would refresh the map location everytime the user changes location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        location = locations[0] //locations are essentially stored in an array, they only get appended.  it is always [0] because that is the "newest" location
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01) //specifies how accurate the map coordinates are
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        myMapview.setRegion(region, animated:true)
+        myMapview.showsUserLocation=true
     }
 
     override func didReceiveMemoryWarning() {
