@@ -55,15 +55,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       getThis()
+       
         //print(subtitles)
         
         //saveThis(title: "Exercise", subtitle: "Pullups 8x", coordinates: "222")
         //saveThis(title: "WFlows", subtitle: "Delivery", coordinates: "76543!")
         //saveThis(title: "ssWFlows", subtitle: "Dsdelivery", coordinates: "76543!")
-        
-        
-                
+    }
+    
+    override func viewDidAppear(_ animated: Bool) //this function refreshes the page after it reappears.  useful for updating the screen
+    {
+        getThis()
     }
 
     override func didReceiveMemoryWarning() {
