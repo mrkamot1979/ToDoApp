@@ -10,11 +10,12 @@ import UIKit
 import CoreData
 
 //these arrays are used to hold the retrieved information that will populate the table
+//this was placed here so that they are global
 var titles:[String] = []
 var subtitles:[String] = []
 var coordinates:[String] = []
 
-var thisItem:Int = 0 //this variable is used to hold the item that is going to be deleted
+var thisItem:Int = 0 //this variable is used to hold the item that is going to be deleted / which one to access
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -48,6 +49,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             getThis() //reloads the table without the deleted item
             
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  //this function listens to the any touch/select on the tableview
+    {
+        thisItem = indexPath.row
+        performSegue(withIdentifier: "show", sender: self) //segue to go to the individual ToDo view
     }
 
     override func viewDidLoad()

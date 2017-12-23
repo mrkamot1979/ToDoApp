@@ -124,6 +124,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="dio-xd-jvr"/>
                     <connections>
                         <outlet property="myTableView" destination="DLm-UV-KH9" id="2xQ-nH-lag"/>
+                        <segue destination="S3I-p5-WzD" kind="show" identifier="show" id="Dci-sx-YAo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suu-MG-kj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,7 +168,7 @@
                                 </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6X-QP-vbg">
-                                <rect key="frame" x="117" y="599" width="171" height="30"/>
+                                <rect key="frame" x="102" y="580" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="BACK">
