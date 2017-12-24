@@ -34,10 +34,12 @@
                                 <rect key="frame" x="16" y="249" width="343" height="323"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-zf-gym">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-zf-gym">
                                 <rect key="frame" x="112" y="580" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rr9-zf-gym" secondAttribute="height" multiplier="5:1" id="RUY-Xa-VAo"/>
+                                </constraints>
                                 <state key="normal" title="ADD ITEM">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -54,6 +56,11 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vUs-fZ-E0K" firstAttribute="top" secondItem="rr9-zf-gym" secondAttribute="bottom" constant="8" id="INC-XR-dqE"/>
+                            <constraint firstItem="rr9-zf-gym" firstAttribute="leading" secondItem="UYT-kt-aOy" secondAttribute="leadingMargin" constant="96" id="beg-JW-YcO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rr9-zf-gym" secondAttribute="trailing" constant="97" id="jSW-ag-MqK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="F9l-vX-LxS"/>
                     <connections>
@@ -167,10 +174,12 @@
                                     <constraint firstAttribute="width" secondItem="uX6-zn-5I0" secondAttribute="height" multiplier="49:50" id="6lQ-3x-oQr"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6X-QP-vbg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6X-QP-vbg">
                                 <rect key="frame" x="102" y="580" width="171" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a6X-QP-vbg" secondAttribute="height" multiplier="57:10" id="fbP-Wb-Z1D"/>
+                                </constraints>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -184,11 +193,14 @@
                             <constraint firstItem="39X-8a-Gh6" firstAttribute="leading" secondItem="EaJ-Zi-0po" secondAttribute="leadingMargin" id="12n-mg-ePd"/>
                             <constraint firstItem="abP-Uq-L8I" firstAttribute="trailing" secondItem="EaJ-Zi-0po" secondAttribute="trailingMargin" id="4yM-yw-i7t"/>
                             <constraint firstItem="uX6-zn-5I0" firstAttribute="leading" secondItem="EaJ-Zi-0po" secondAttribute="leadingMargin" id="9eP-Sa-Z7i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a6X-QP-vbg" secondAttribute="trailing" constant="86" id="H6d-VW-SKB"/>
                             <constraint firstItem="abP-Uq-L8I" firstAttribute="top" secondItem="39X-8a-Gh6" secondAttribute="bottom" constant="16" id="PBY-9q-ynV"/>
                             <constraint firstItem="abP-Uq-L8I" firstAttribute="leading" secondItem="EaJ-Zi-0po" secondAttribute="leadingMargin" id="Q5h-cK-bd5"/>
                             <constraint firstItem="uX6-zn-5I0" firstAttribute="trailing" secondItem="EaJ-Zi-0po" secondAttribute="trailingMargin" id="UAh-va-wgv"/>
+                            <constraint firstItem="a6X-QP-vbg" firstAttribute="leading" secondItem="EaJ-Zi-0po" secondAttribute="leadingMargin" constant="86" id="ahP-7w-VG3"/>
                             <constraint firstItem="39X-8a-Gh6" firstAttribute="top" secondItem="FjG-dL-Hba" secondAttribute="bottom" constant="37" id="eTm-6d-wPb"/>
                             <constraint firstItem="39X-8a-Gh6" firstAttribute="trailing" secondItem="EaJ-Zi-0po" secondAttribute="trailingMargin" id="gAh-RR-ghM"/>
+                            <constraint firstItem="HFb-5L-dWl" firstAttribute="top" secondItem="a6X-QP-vbg" secondAttribute="bottom" constant="8" id="jpa-Fv-puB"/>
                             <constraint firstItem="uX6-zn-5I0" firstAttribute="top" secondItem="abP-Uq-L8I" secondAttribute="bottom" constant="26" id="kAy-N9-Cek"/>
                         </constraints>
                     </view>

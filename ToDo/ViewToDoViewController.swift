@@ -23,6 +23,22 @@ class ViewToDoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) //this function populates the TO DO view
+    {
+        txtTitle.text = titles[thisItem]
+        txtSubtitle.text = subtitles[thisItem]
+        
+        //for the map
+        if coordinates[thisItem].contains("$")
+        {
+            let array = coordinates[thisItem].components(separatedBy: "$")
+            
+            let latitude = CLLocationDegrees(array[0])
+            let longitude = CLLocationDegrees(array[1])
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
